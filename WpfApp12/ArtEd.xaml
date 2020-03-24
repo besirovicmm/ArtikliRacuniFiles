@@ -1,0 +1,22 @@
+﻿<Window x:Class="ArtikliWPF.ArtEd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArtikliWPF"
+        mc:Ignorable="d"
+        Title="ArtEd" Height="450" Width="800" WindowStyle="None">
+    <UniformGrid Columns="2">
+        <Label Content="Sifra: " FontSize="42"/>
+        <TextBox Text="{Binding Sifra, UpdateSourceTrigger=Explicit}" FontSize="42" Width="400" Margin="-2.667,0,-0.667,0"/>
+        <Label Content="Naziv: " FontSize="42"/>
+        <TextBox Text="{Binding Naziv, UpdateSourceTrigger=Explicit}" FontSize="42" Width="400"/>
+        <Label Content="Ulazna cena: " FontSize="42"/>
+        <TextBox Text="{Binding Ucena, UpdateSourceTrigger=Explicit}" FontSize="42" Width="400"/>
+        <Label Content="Marza: " FontSize="42"/>
+        <TextBox Text="{Binding Marza, UpdateSourceTrigger=Explicit}" FontSize="42" Width="400"/>
+        <Button Content="Otkazi" FontSize="42" Click="Otkazi"/>
+        <Button Content="Unos" FontSize="42" Click="Unos" />
+    </UniformGrid>
+
+</Window>

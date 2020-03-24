@@ -1,0 +1,40 @@
+﻿<Window x:Class="ArtikliWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArtikliWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl>
+        <TabItem Header="Artikli">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Right">
+                    <Button Content="Dodaj" FontSize="42" Click="Dodavanje" />
+                    <Button Content="Obrisi" FontSize="42" Click="Brisanje" />
+                    <Button Content="Izmeni" FontSize="42" Click="Izmena" />
+                </StackPanel>
+                <DataGrid AutoGenerateColumns="False" Name="dg" FontSize="42" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Sifra" Binding="{Binding Sifra}"/>
+                        <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}"/>
+                        <DataGridTextColumn Header="Ulazna cena" Binding="{Binding Ucena}"/>
+                        <DataGridTextColumn Header="Marza" Binding="{Binding Marza}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Racuni">
+            <StackPanel>
+                <DataGrid Name="dgRacuni" IsReadOnly="True" ColumnWidth="*" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Datum" Binding="{Binding datumIzdavanja}"/>
+                        <DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Content="Novi racun" Click="NoviRacun"/>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+
+</Window>

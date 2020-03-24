@@ -1,0 +1,21 @@
+﻿<Window x:Class="ArtikliWPF.RacuniEd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArtikliWPF"
+        mc:Ignorable="d"
+        Title="RacuniEd" Height="450" Width="800">
+    <StackPanel>
+        <TextBox Text="{Binding Sifra, UpdateSourceTrigger=Explicit}" FontSize="42"/>
+        <TextBox Name="kolicinaArtikla" FontSize="42"/>
+        <Button Content="Unos" FontSize="42" Click="UnosArt" />
+        <DataGrid AutoGenerateColumns="False" Name="dgArtikli" ColumnWidth="*" IsReadOnly="True" SelectionMode="Single" FontSize="42" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Artikal" Binding="{Binding Key.Naziv}"/>
+                <DataGridTextColumn Header="Kolicina" Binding="{Binding Value}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button FontSize="42" Content="Zavrsi racun" Click="Snimi"/>
+    </StackPanel>
+</Window>
